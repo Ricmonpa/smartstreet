@@ -322,9 +322,9 @@ const MapContainer = ({ children, showDirections = false }) => {
             directions={selectedRoute.route}
             options={{
               polylineOptions: {
-                strokeColor: '#f97316', // Naranja
-                strokeWeight: 5,
-                strokeOpacity: 0.8
+                strokeColor: selectedRoute.securityLevel === 'Alta' || selectedRoute.securityLevel === 'Segura' || selectedRoute.securityLevel === 'Baja' ? '#10b981' : '#f97316', // Verde si es seguro/bajo riesgo, Naranja si es riesgo
+                strokeWeight: 6,
+                strokeOpacity: 0.9
               },
               suppressMarkers: false
             }}

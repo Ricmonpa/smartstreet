@@ -26,42 +26,45 @@ const NavigationPage = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-gray-100 flex flex-col">
-      {/* Header */}
-      <div className="bg-white shadow-sm p-4 z-10">
-        <div className="flex items-center gap-4">
+      {/* Header Flotante */}
+      <div className="absolute top-6 left-6 right-6 z-30 pointer-events-none">
+        <div className="bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/20 flex items-center gap-4 pointer-events-auto max-w-2xl mx-auto">
           <button
             onClick={() => navigate('/routes')}
-            className="text-gray-600 hover:text-gray-800 text-xl"
+            className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
           >
-            ←
+            <span className="text-2xl">←</span>
           </button>
-          <img 
-            src="/logo.png" 
-            alt="Smartstreet Logo" 
-            className="h-16 w-auto object-contain"
-            onError={(e) => {
-              e.target.style.display = 'none'
-            }}
-          />
-          <h1 className="text-xl font-bold flex-1">Navegación en curso</h1>
+          
+          <div className="flex items-center gap-3 flex-1">
+            <div className={`p-2 rounded-xl shadow-inner ${
+              selectedRoute.securityLevel === 'Alta' || selectedRoute.securityLevel === 'Baja' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'
+            }`}>
+              <span className="text-xl">🛡️</span>
+            </div>
+            <div>
+              <h1 className="text-sm font-bold text-gray-900 uppercase tracking-tight">Ruta Más Segura</h1>
+              <div className="flex items-center gap-3 text-xs font-medium text-gray-500">
+                <span className="flex items-center gap-1">⏱️ {selectedRoute.durationText}</span>
+                <span className="flex items-center gap-1">📏 {selectedRoute.distanceText}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="hidden sm:block">
+            <img 
+              src="/logo.png" 
+              alt="Smartstreet" 
+              className="h-8 w-auto opacity-80"
+              onError={(e) => e.target.style.display = 'none'}
+            />
+          </div>
         </div>
       </div>
 
       {/* Mapa con ruta */}
       <div className="flex-1 relative">
         <MapContainer showDirections={true}>
-          {/* Panel de información de la ruta */}
-          <div className="absolute top-4 left-4 right-4 z-20">
-            <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg">
-              <h2 className="font-bold text-lg mb-2">{selectedRoute.name}</h2>
-              <div className="flex items-center gap-4 text-sm text-gray-600">
-                <span>⏱️ {selectedRoute.durationText}</span>
-                <span>📏 {selectedRoute.distanceText}</span>
-                <span>🛡️ {selectedRoute.securityLevel}</span>
-              </div>
-            </div>
-          </div>
-
           {/* Instrucciones de navegación */}
           <NavigationInstructions route={selectedRoute} />
         </MapContainer>

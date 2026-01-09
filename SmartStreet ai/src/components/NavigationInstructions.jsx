@@ -30,46 +30,46 @@ const NavigationInstructions = ({ route }) => {
   if (steps.length === 0) return null
 
   return (
-    <div className="absolute bottom-4 left-4 right-4 z-20">
-      <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg">
-        <div className="flex items-start gap-3">
-          <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
-            {currentStep + 1}
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-medium text-gray-800 mb-1">
-              {currentInstruction?.instructions || 'Sigue la ruta'}
-            </p>
-            <p className="text-xs text-gray-500">
-              Paso {currentStep + 1} de {steps.length}
-            </p>
-          </div>
-        </div>
-
-        {/* Barra de progreso */}
-        <div className="mt-3 h-2 bg-gray-200 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-orange-500 transition-all duration-300"
-            style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
-          />
-        </div>
-
-        {/* Botones de navegación */}
-        <div className="flex gap-2 mt-3">
+    <div className="absolute bottom-6 left-6 right-6 z-20 max-w-md mx-auto">
+      <div className="bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-2xl border border-white/20">
+        <div className="flex items-center gap-4">
           <button
             onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
             disabled={currentStep === 0}
-            className="flex-1 px-3 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-200"
+            className="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-700 rounded-full disabled:opacity-30 hover:bg-gray-200 transition-all shadow-sm"
+            aria-label="Anterior"
           >
-            ← Anterior
+            <span className="text-lg">←</span>
           </button>
+
+          <div className="flex-1 text-center">
+            <div 
+              className="text-base font-bold text-gray-900 leading-tight mb-1"
+              dangerouslySetInnerHTML={{ __html: currentInstruction?.instructions || 'Sigue la ruta' }}
+            />
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-orange-500 bg-orange-50 px-2 py-0.5 rounded-full">
+                Paso {currentStep + 1} / {steps.length}
+              </span>
+            </div>
+          </div>
+
           <button
             onClick={() => setCurrentStep(Math.min(steps.length - 1, currentStep + 1))}
             disabled={currentStep === steps.length - 1}
-            className="flex-1 px-3 py-2 bg-orange-500 text-white rounded-lg text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-orange-600"
+            className="w-10 h-10 flex items-center justify-center bg-orange-500 text-white rounded-full disabled:opacity-30 hover:bg-orange-600 transition-all shadow-md"
+            aria-label="Siguiente"
           >
-            Siguiente →
+            <span className="text-lg">→</span>
           </button>
+        </div>
+
+        {/* Barra de progreso sutil */}
+        <div className="mt-4 h-1 bg-gray-100 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-orange-500 transition-all duration-500 ease-out"
+            style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
+          />
         </div>
       </div>
     </div>

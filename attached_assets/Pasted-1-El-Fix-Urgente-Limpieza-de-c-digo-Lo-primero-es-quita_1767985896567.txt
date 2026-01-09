@@ -1,0 +1,49 @@
+1. El "Fix" Urgente (Limpieza de código)
+Lo primero es quitar esos horribles <b>left</b> que aparecen en las instrucciones. El texto viene con formato HTML de Google, pero React lo está mostrando como texto plano.
+
+Copia y pega esto en Replit:
+
+"Detecto un error visual grave en las tarjetas de navegación. Las instrucciones de paso a paso muestran etiquetas HTML crudas (ejemplo: Turn <b>left</b>).
+
+Por favor, refactoriza el componente que renderiza las instrucciones (posiblemente NavigationCard o similar) para que interprete el HTML correctamente.
+
+Solución técnica: Usa dangerouslySetInnerHTML (sanitizado) o un parser de HTML a React para que las negritas se rendericen visualmente y no como texto.
+
+Quiero que se lea 'Turn left' limpio."
+
+2. UI "Flotante" y Moderna (Quitar lo acartonado)
+Vamos a transformar esas barras blancas sólidas que ocupan todo el ancho en "Tarjetas Flotantes" (Floating Cards) con esquinas redondeadas y sombras suaves. Esto permite ver más mapa y da sensación de app nativa.
+
+Copia y pega esto en Replit:
+
+"La interfaz de navegación se siente muy rígida y web (barras blancas completas arriba y abajo). Vamos a modernizarla al estilo Waze/Uber con TailwindCSS:
+
+Header Flotante: Convierte la barra superior ('Ruta Más Rápida') en una 'Card' flotante con márgenes a los lados (m-4), esquinas redondeadas (rounded-xl) y sombra suave (shadow-lg). Que no toque los bordes de la pantalla.
+
+Instrucciones Compactas: Haz lo mismo con la barra inferior de pasos. Que sea una tarjeta flotante centrada en la parte inferior.
+
+Botones de Navegación: Los botones 'Anterior' y 'Siguiente' son demasiado grandes y naranjas. Cámbialos por botones tipo 'Pill' (cápsula) o íconos de flecha (< y >) discretos a los lados de la instrucción, para limpiar el ruido visual."
+
+3. El "Alma" de SmartStreet (Visualización de Riesgo)
+Actualmente la línea de ruta es azul (estándar de Google). Para que esto sea SmartStreet, la línea debe comunicar seguridad.
+
+Copia y pega esto en Replit:
+
+"Para diferenciar esta app de Google Maps, necesito integrar la identidad de SmartStreet en la ruta visual:
+
+Polyline de Color: Cambia el color de la polilínea de la ruta (Polyline component). En lugar del azul default, usa un color que represente el nivel de riesgo calculado.
+
+Si el riesgo es 'Bajo' (como dice la tarjeta actual), pinta la línea de Verde Esmeralda o Azul Cian.
+
+Si fuera alto, sería Naranja/Rojo.
+
+Iconografía: Asegúrate de que el escudo de seguridad (el ícono del escudo) sea más prominente en la tarjeta superior. Hazlo un poco más grande y ponle un borde de color acorde al nivel de seguridad."
+
+Resumen de lo que lograremos:
+Legibilidad: Texto limpio sin códigos <b>.
+
+Espacio: Verás más mapa de Cholula y menos interfaz blanca.
+
+Identidad: Dejará de parecer un "Google Maps roto" y empezará a parecer una App de Seguridad.
+
+Dale estas instrucciones una por una (o todas juntas si el chat es capaz) y muéstrame el resultado. ¡Vamos a pulir esa joya! 💎
