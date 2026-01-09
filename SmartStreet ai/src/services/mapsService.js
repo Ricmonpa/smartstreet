@@ -196,8 +196,8 @@ export const calculateRoutes = async (origin, destination, userProfile, transpor
             return {
               id: index + 1,
               name: getRouteName(index, dangerPercentage),
-              route: result, // IMPORTANTE: Pasar el objeto result completo que contiene la propiedad routes
-              routeIndex: index, // Índice de esta ruta específica dentro del resultado
+              route: result, // Objeto DirectionsResult completo
+              routeIndex: index,
               distance: distance,
               duration: duration,
               distanceText: leg.distance.text,
