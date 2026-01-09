@@ -163,7 +163,7 @@ export const calculateRoutes = async (origin, destination, userProfile, transpor
         provideRouteAlternatives: true // Obtener múltiples rutas
       },
       (result, status) => {
-        if (status === window.google.maps.DirectionsStatus.OK && result.routes) {
+        if (status === window.google.maps.DirectionsStatus.OK && result.routes && result.routes.length > 0) {
           // Procesar rutas y calcular peligrosidad
           const processedRoutes = result.routes.map((route, index) => {
             const leg = route.legs[0]
@@ -196,7 +196,8 @@ export const calculateRoutes = async (origin, destination, userProfile, transpor
             return {
               id: index + 1,
               name: getRouteName(index, dangerPercentage),
-              route: route,
+              route: result, // IMPORTANTE: Pasar el objeto result completo que contiene la propiedad routes
+              routeIndex: index, // Índice de esta ruta específica dentro del resultado
               distance: distance,
               duration: duration,
               distanceText: leg.distance.text,

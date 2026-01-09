@@ -341,6 +341,7 @@ const MapContainer = ({ children, showDirections = false }) => {
         {selectedRoute && selectedRoute.route && (
           <DirectionsRenderer
             directions={selectedRoute.route}
+            routeIndex={selectedRoute.routeIndex || 0}
             options={{
               polylineOptions: {
                 strokeColor: selectedRoute.securityLevel === 'Alta' || selectedRoute.securityLevel === 'Segura' || selectedRoute.securityLevel === 'Baja' ? '#10b981' : '#f97316',
