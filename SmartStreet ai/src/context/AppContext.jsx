@@ -30,13 +30,18 @@ export const AppProvider = ({ children }) => {
 
   // Estado de rutas
   const [routes, setRoutes] = useState([])
-  const [selectedRoute, setSelectedRoute] = useState(null)
+  const [selectedRoute, _setSelectedRoute] = useState(null)
 
   // Estado de incidencias reportadas
   const [incidents, setIncidents] = useState([])
 
   // Estado de modo de transporte
   const [transportMode, setTransportMode] = useState('WALKING') // 'DRIVING', 'WALKING', 'BICYCLING', 'TRANSIT'
+
+  const setSelectedRoute = (route) => {
+    console.log('Cambiando selectedRoute a:', route)
+    _setSelectedRoute(route)
+  }
 
   // Guardar perfil en localStorage cuando cambie
   useEffect(() => {
