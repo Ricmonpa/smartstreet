@@ -345,8 +345,8 @@ const MapContainer = ({ children, showDirections = false }) => {
             options={{
               polylineOptions: {
                 strokeColor: selectedRoute.securityLevel === 'Alta' || selectedRoute.securityLevel === 'Segura' || selectedRoute.securityLevel === 'Baja' ? '#10b981' : '#f97316',
-                strokeWeight: 8,
-                strokeOpacity: 0.9,
+                strokeWeight: 10,
+                strokeOpacity: 0.8,
                 zIndex: 100
               },
               suppressMarkers: false,

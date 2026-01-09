@@ -31,6 +31,7 @@ const RouteSelectionPage = () => {
   }, [currentLocation, destination, userProfile, setRoutes])
 
   const handleRouteSelect = (route) => {
+    console.log('Ruta seleccionada:', route)
     setSelectedRoute(route)
   }
 
