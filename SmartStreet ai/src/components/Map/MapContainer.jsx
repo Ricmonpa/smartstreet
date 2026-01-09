@@ -35,7 +35,7 @@ const mapOptions = {
 const libraries = []
 
 // Componente principal del mapa
-const MapContainer = ({ children, showDirections = false }) => {
+const MapContainer = ({ children, showDirections = false, simulationActive = false, onSimulationEnd }) => {
   const { 
     currentLocation, 
     destination, 
@@ -47,57 +47,53 @@ const MapContainer = ({ children, showDirections = false }) => {
   const [map, setMap] = useState(null)
   const [mapError, setMapError] = useState(null)
   const mapRef = useRef(null)
-  const [heading, setHeading] = useState(0)
-  const prevLocationRef = useRef(null)
+  const simulationIntervalRef = useRef(null)
 
-  // Función para calcular rumbo (heading) entre dos puntos
-  const calculateHeading = (from, to) => {
-    if (!from || !to) return 0;
-    const lat1 = from.lat * Math.PI / 180;
-    const lon1 = from.lng * Math.PI / 180;
-    const lat2 = to.lat * Math.PI / 180;
-    const lon2 = to.lng * Math.PI / 180;
-    const dLon = lon2 - lon1;
-    const y = Math.sin(dLon) * Math.cos(lat2);
-    const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLon);
-    const brng = Math.atan2(y, x);
-    return ((brng * 180 / Math.PI) + 360) % 360;
-  };
-
-  // Implementación de Geolocalización Dinámica y Seguimiento
+  // Efecto para la simulación
   useEffect(() => {
-    if (navigator.geolocation) {
-      const watchId = navigator.geolocation.watchPosition(
+    if (simulationActive && selectedRoute?.route?.overview_path) {
+      const path = selectedRoute.route.overview_path;
+      let step = 0;
+      
+      simulationIntervalRef.current = setInterval(() => {
+        if (step < path.length) {
+          const point = path[step];
+          const newPos = { lat: point.lat(), lng: point.lng() };
+          setCurrentLocation(newPos);
+          if (map) {
+            map.panTo(newPos);
+          }
+          step++;
+        } else {
+          clearInterval(simulationIntervalRef.current);
+          if (onSimulationEnd) onSimulationEnd();
+        }
+      }, 100); // 100ms para que se vea rápido
+    }
+
+    return () => {
+      if (simulationIntervalRef.current) {
+        clearInterval(simulationIntervalRef.current);
+      }
+    };
+  }, [simulationActive, selectedRoute, map, setCurrentLocation, onSimulationEnd]);
+
+  // Implementación de Geolocalización Dinámica (solo si no hay simulación)
+  useEffect(() => {
+    if (!simulationActive && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
-          const newLoc = { lat: latitude, lng: longitude };
-          
-          if (prevLocationRef.current) {
-            const newHeading = calculateHeading(prevLocationRef.current, newLoc);
-            setHeading(newHeading);
-          }
-          prevLocationRef.current = newLoc;
-          
           if (setCurrentLocation) {
-            setCurrentLocation(newLoc);
-          }
-
-          if (map) {
-            map.panTo(newLoc);
-            // Solo rotar si hay un movimiento significativo o estamos en modo navegación
-            if (showDirections) {
-              map.setHeading(heading);
-            }
+            setCurrentLocation({ lat: latitude, lng: longitude });
           }
         },
         (error) => {
           console.error("Error obteniendo ubicación:", error);
-        },
-        { enableHighAccuracy: true }
+        }
       );
-      return () => navigator.geolocation.clearWatch(watchId);
     }
-  }, [setCurrentLocation, map, showDirections, heading]);
+  }, [setCurrentLocation, simulationActive]);
 
   const getTransportIcon = (mode) => {
     switch(mode) {

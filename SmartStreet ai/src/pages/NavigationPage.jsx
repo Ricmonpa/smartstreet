@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import MapContainer from '../components/Map/MapContainer'
@@ -7,6 +8,7 @@ import NavigationInstructions from '../components/NavigationInstructions'
 const NavigationPage = () => {
   const { selectedRoute, destination } = useApp()
   const navigate = useNavigate()
+  const [isSimulating, setIsSimulating] = useState(false)
 
   if (!selectedRoute) {
     return (
@@ -64,7 +66,26 @@ const NavigationPage = () => {
 
       {/* Mapa con ruta */}
       <div className="flex-1 relative">
-        <MapContainer showDirections={true}>
+        <MapContainer 
+          showDirections={true} 
+          simulationActive={isSimulating}
+          onSimulationEnd={() => setIsSimulating(false)}
+        >
+          {/* Botón de Simulación Flotante */}
+          <div className="absolute right-6 top-24 z-30">
+            <button
+              onClick={() => setIsSimulating(!isSimulating)}
+              className={`flex items-center gap-2 px-4 py-3 rounded-full shadow-lg font-bold transition-all ${
+                isSimulating 
+                ? 'bg-red-500 text-white hover:bg-red-600' 
+                : 'bg-white text-gray-800 hover:bg-gray-50 border border-gray-100'
+              }`}
+            >
+              <span className="text-xl">{isSimulating ? '⏹️' : '▶️'}</span>
+              <span>{isSimulating ? 'Detener' : 'Simular'}</span>
+            </button>
+          </div>
+
           {/* Instrucciones de navegación */}
           <NavigationInstructions route={selectedRoute} />
         </MapContainer>
