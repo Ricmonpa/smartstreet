@@ -31,8 +31,7 @@ const mapOptions = {
 }
 
 // Constante fuera del componente para evitar recreación en cada render
-// Nota: directions ya no es una librería separada en la nueva API, se usa directamente
-const libraries = []
+const libraries = ['places', 'geometry', 'drawing', 'visualization']
 
 // Componente principal del mapa
 const MapContainer = ({ children, showDirections = false }) => {
@@ -340,17 +339,16 @@ const MapContainer = ({ children, showDirections = false }) => {
         {/* Renderizar ruta seleccionada */}
         {selectedRoute && selectedRoute.route && (
           <DirectionsRenderer
+            key={selectedRoute.id} // Forzar re-render si cambia la ruta
             directions={selectedRoute.route}
             routeIndex={selectedRoute.routeIndex || 0}
             options={{
               polylineOptions: {
-                strokeColor: '#FFFF00', // Amarillo brillante
-                strokeWeight: 14, // Aún más grueso
+                strokeColor: '#FFFF00', 
+                strokeWeight: 12,
                 strokeOpacity: 1.0,
                 zIndex: 9999
-              },
-              suppressMarkers: false,
-              preserveViewport: false
+              }
             }}
           />
         )}

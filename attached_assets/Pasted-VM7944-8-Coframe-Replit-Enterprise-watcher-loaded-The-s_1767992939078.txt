@@ -1,0 +1,230 @@
+VM7944:8 [Coframe] Replit Enterprise watcher loaded
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+smartstreet:1 The source list for the Content Security Policy directive 'default-src' contains an invalid source: ''unsafe-dynamic''. It will be ignored.
+smartstreet:1 The Content-Security-Policy directive 'default-src' contains 'report-uri' as a source expression. Did you want to add it as a directive and forget a semicolon?
+smartstreet:1 The source list for Content Security Policy directive 'default-src' contains a source with an invalid path: '/api/4509669501698048/security/?sentry_key=7eb3d90eb4660416caf507087367e67e'. The query component, including the '?', will be ignored.
+32c2e8bcb63ec0a2.js:2 
+      /////////////////////
+   ///////////////////////////
+  ////////@@@@@@@//////////////
+  ////////@@@@@@@//////////////
+  ////////@@@@@@@//////////////        Curious and driven?
+  ///////////////@@@@@@@///////        Work with us!
+  ///////////////@@@@@@@///////
+  ///////////////@@@@@@@///////        https://join.replit.com/hack.with.us
+  ////////@@@@@@@//////////////
+  ////////@@@@@@@//////////////
+  ////////@@@@@@#//////////////
+   ///////////////////////////
+      /////////////////////
+      
+32c2e8bcb63ec0a2.js:2 Download the Apollo DevTools for a better development experience: https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm
+32c2e8bcb63ec0a2.js:2 [LaunchDarkly] LaunchDarkly client initialized
+32c2e8bcb63ec0a2.js:2 [ai-chat] Creating connection with chat proxy enabled
+(anónimas) @ 32c2e8bcb63ec0a2.js:2
+stallwart.build.js:1 stallwart: failed ping 1
+stallwart.build.js:1 stallwart: failed ping 1
+stallwart.build.js:1 stallwart: failed ping 2
+stallwart.build.js:1 stallwart: failed ping 3
+Error while parsing the 'sandbox' attribute: 'allow-downloads-without-user-activation' is an invalid sandbox flag.
+Error while parsing the 'sandbox' attribute: 'allow-downloads-without-user-activation' is an invalid sandbox flag.
+Error while parsing the 'sandbox' attribute: 'allow-downloads-without-user-activation' is an invalid sandbox flag.
+Error while parsing the 'sandbox' attribute: 'allow-downloads-without-user-activation' is an invalid sandbox flag.
+Error while parsing the 'sandbox' attribute: 'allow-downloads-without-user-activation' is an invalid sandbox flag.
+Error while parsing the 'sandbox' attribute: 'allow-downloads-without-user-activation' is an invalid sandbox flag.
+Error while parsing the 'sandbox' attribute: 'allow-downloads-without-user-activation' is an invalid sandbox flag.
+ed1e693c96a75807.js:2 Unrecognized feature: 'ambient-light-sensor'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'battery'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'execution-while-not-rendered'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'execution-while-out-of-viewport'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'layout-animations'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'legacy-image-formats'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'navigation-override'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'oversized-images'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'publickey-credentials'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'speaker-selection'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'unoptimized-images'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'unsized-media'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Unrecognized feature: 'pointer-lock'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Allow attribute will take precedence over 'allowfullscreen'.
+z @ ed1e693c96a75807.js:2
+ed1e693c96a75807.js:2 Allow attribute will take precedence over 'allowpaymentrequest'.
+z @ ed1e693c96a75807.js:2
+stallwart.build.js:1 stallwart: failed ping 1
+32c2e8bcb63ec0a2.js:2 task queue exceeded allotted deadline by 52ms
+(anónimas) @ 32c2e8bcb63ec0a2.js:2
+stallwart.build.js:1 stallwart: failed ping 1
+stallwart.build.js:1 stallwart: failed ping 2
+stallwart.build.js:1 stallwart: failed ping 3
+smartstreet:1 Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner.
+attached_assets/image_1767992373686.png:1  Failed to load resource: the server responded with a status of 404 ()
+workspace_iframe.html:32 Unrecognized feature: 'ambient-light-sensor'.
+workspace_iframe.html:32 Unrecognized feature: 'battery'.
+workspace_iframe.html:32 Unrecognized feature: 'execution-while-not-rendered'.
+workspace_iframe.html:32 Unrecognized feature: 'execution-while-out-of-viewport'.
+workspace_iframe.html:32 Unrecognized feature: 'layout-animations'.
+workspace_iframe.html:32 Unrecognized feature: 'legacy-image-formats'.
+workspace_iframe.html:32 Unrecognized feature: 'navigation-override'.
+workspace_iframe.html:32 Unrecognized feature: 'oversized-images'.
+workspace_iframe.html:32 Unrecognized feature: 'publickey-credentials'.
+workspace_iframe.html:32 Unrecognized feature: 'speaker-selection'.
+workspace_iframe.html:32 Unrecognized feature: 'unoptimized-images'.
+workspace_iframe.html:32 Unrecognized feature: 'unsized-media'.
+workspace_iframe.html:32 Allow attribute will take precedence over 'allowfullscreen'.
+workspace_iframe.html:32 Allow attribute will take precedence over 'allowpaymentrequest'.
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/:1 Mixed Content: The page at 'https://b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/' was loaded over HTTPS, but requested an insecure element 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'. This request was automatically upgraded to HTTPS, For more information see https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/:1 Mixed Content: The page at 'https://b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/' was loaded over HTTPS, but requested an insecure element 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'. This request was automatically upgraded to HTTPS, For more information see https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html
+attached_assets/Captura_de_Pantalla_2026-01-09_a_la(s)_15.02.23_1767992545529.png:1  Failed to load resource: the server responded with a status of 404 ()
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/src/context/AppContext.jsx?t=1767992564110:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/src/pages/NavigationPage.jsx?t=1767992577145:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/src/App.jsx?t=1767992577145:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/src/pages/RouteSelectionPage.jsx?t=1767992577145:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/src/pages/HomePage.jsx?t=1767992577145:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/src/components/Map/MapContainer.jsx?t=1767992577145:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/src/components/SearchBar.jsx?t=1767992577145:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/src/components/ProfileConfigModal.jsx?t=1767992577145:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/src/components/IncidentReportModal.jsx?t=1767992577145:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+navigation:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev:3001/:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/src/index.css?t=1767992590277:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev:3001/:1  Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+injected.js:37 ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+(anónimas) @ injected.js:37
+injected.js:37 ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+(anónimas) @ injected.js:37
+injected.js:37 Ubicación detectada: 19.084779645689945 -98.29831721459924
+injected.js:37 Ubicación detectada: 19.084779645689945 -98.29831721459924
+injected.js:37 As of February 21st, 2024, google.maps.Marker is deprecated. Please use google.maps.marker.AdvancedMarkerElement instead. At this time, google.maps.Marker is not scheduled to be discontinued, but google.maps.marker.AdvancedMarkerElement is recommended over google.maps.Marker. While google.maps.Marker will continue to receive bug fixes for any major regressions, existing bugs in google.maps.Marker will not be addressed. At least 12 months notice will be given before support is discontinued. Please see https://developers.google.com/maps/deprecations for additional details and https://developers.google.com/maps/documentation/javascript/advanced-markers/migration for the migration guide.
+(anónimas) @ injected.js:37
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/:1 Mixed Content: The page at 'https://b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/' was loaded over HTTPS, but requested an insecure element 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'. This request was automatically upgraded to HTTPS, For more information see https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html
+b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/:1 Mixed Content: The page at 'https://b7d2597e-7cf2-4661-8f71-52e3c583fff4-00-2b7vspgismguy.kirk.replit.dev/' was loaded over HTTPS, but requested an insecure element 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'. This request was automatically upgraded to HTTPS, For more information see https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html
+injected.js:37 Fuera de zona conocida. Aplicando riesgo base nacional por defecto.
+injected.js:37 Fuera de zona conocida. Aplicando riesgo base nacional por defecto.
+injected.js:37 Fuera de zona conocida. Aplicando riesgo base nacional por defecto.
+injected.js:37 Fuera de zona conocida. Aplicando riesgo base nacional por defecto.
+injected.js:37 Fuera de zona conocida. Aplicando riesgo base nacional por defecto.
+injected.js:37 Fuera de zona conocida. Aplicando riesgo base nacional por defecto.
+injected.js:37 Ruta seleccionada: Object
+injected.js:37 Cambiando selectedRoute a: Object
+injected.js:37 Ubicación detectada: 19.084779645689945 -98.29831721459924
+injected.js:37 Ubicación detectada: 19.084779645689945 -98.29831721459924
+injected.js:37 Fuera de zona conocida. Aplicando riesgo base nacional por defecto.
+injected.js:37 Fuera de zona conocida. Aplicando riesgo base nacional por defecto.
+injected.js:37 Fuera de zona conocida. Aplicando riesgo base nacional por defecto.
+injected.js:37 Fuera de zona conocida. Aplicando riesgo base nacional por defecto.
+injected.js:37 Ruta seleccionada: Object
+injected.js:37 Cambiando selectedRoute a: Object
+injected.js:37 Ruta seleccionada: Object
+injected.js:37 Cambiando selectedRoute a: Object
+injected.js:37 Ruta seleccionada: Object
+injected.js:37 Cambiando selectedRoute a: Object
+injected.js:37 Ubicación detectada: 19.084803385695963 -98.29830932210972
+injected.js:37 Ubicación detectada: 19.084803385695963 -98.29830932210972
+stallwart.build.js:1 stallwart: failed ping 1
+stallwart.build.js:1 stallwart: failed ping 2
+stallwart.build.js:1 stallwart: failed ping 3
+stallwart.build.js:1 stallwart: failed ping 4
+stallwart.build.js:1 stallwart: failed ping 5
+32c2e8bcb63ec0a2.js:2 task queue exceeded allotted deadline by 49ms
+(anónimas) @ 32c2e8bcb63ec0a2.js:2
+value @ 786787936ed6975f.js:2
+(anónimas) @ 786787936ed6975f.js:2
+a @ 32c2e8bcb63ec0a2.js:2
+setTimeout
+(anónimas) @ 32c2e8bcb63ec0a2.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+(anónimas) @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+(anónimas) @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+value @ 786787936ed6975f.js:2
+(anónimas) @ c1fa5c5bac534ca8.js:2
+uV @ ed1e693c96a75807.js:2
+iH @ ed1e693c96a75807.js:2
+(anónimas) @ ed1e693c96a75807.js:2
+C @ ed1e693c96a75807.js:2
+M @ ed1e693c96a75807.js:2
+(anónimas) @ setImmediate.js:40
+y @ setImmediate.js:69
+c @ setImmediate.js:109
+postMessage
+n @ setImmediate.js:120
+push.YBdB.f.setImmediate @ setImmediate.js:27
+r @ ed1e693c96a75807.js:2
+M @ ed1e693c96a75807.js:2
+(anónimas) @ setImmediate.js:40
+y @ setImmediate.js:69
+c @ setImmediate.js:109
+postMessage
+n @ setImmediate.js:120
+push.YBdB.f.setImmediate @ setImmediate.js:27
+r @ ed1e693c96a75807.js:2
+M @ ed1e693c96a75807.js:2
+(anónimas) @ setImmediate.js:40
+y @ setImmediate.js:69
+c @ setImmediate.js:109

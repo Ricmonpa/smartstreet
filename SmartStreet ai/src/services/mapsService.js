@@ -194,7 +194,7 @@ export const calculateRoutes = async (origin, destination, userProfile, transpor
             )
 
             return {
-              id: index + 1,
+              id: `${Date.now()}-${index}`, // ID único para forzar re-render
               name: getRouteName(index, dangerPercentage),
               route: result, // Objeto DirectionsResult completo
               routeIndex: index,
