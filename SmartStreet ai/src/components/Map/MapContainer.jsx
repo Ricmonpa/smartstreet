@@ -35,7 +35,7 @@ const mapOptions = {
 const libraries = []
 
 // Componente principal del mapa
-const MapContainer = ({ children, showDirections = false, simulationActive = false, onSimulationEnd }) => {
+const MapContainer = ({ children, showDirections = false }) => {
   const { 
     currentLocation, 
     destination, 
@@ -47,43 +47,14 @@ const MapContainer = ({ children, showDirections = false, simulationActive = fal
   const [map, setMap] = useState(null)
   const [mapError, setMapError] = useState(null)
   const mapRef = useRef(null)
-  const simulationIntervalRef = useRef(null)
 
-  // Efecto para la simulación
+  // Implementación de Geolocalización Dinámica
   useEffect(() => {
-    if (simulationActive && selectedRoute?.route?.overview_path) {
-      const path = selectedRoute.route.overview_path;
-      let step = 0;
-      
-      simulationIntervalRef.current = setInterval(() => {
-        if (step < path.length) {
-          const point = path[step];
-          const newPos = { lat: point.lat(), lng: point.lng() };
-          setCurrentLocation(newPos);
-          if (map) {
-            map.panTo(newPos);
-          }
-          step++;
-        } else {
-          clearInterval(simulationIntervalRef.current);
-          if (onSimulationEnd) onSimulationEnd();
-        }
-      }, 100); // 100ms para que se vea rápido
-    }
-
-    return () => {
-      if (simulationIntervalRef.current) {
-        clearInterval(simulationIntervalRef.current);
-      }
-    };
-  }, [simulationActive, selectedRoute, map, setCurrentLocation, onSimulationEnd]);
-
-  // Implementación de Geolocalización Dinámica (solo si no hay simulación)
-  useEffect(() => {
-    if (!simulationActive && navigator.geolocation) {
+    if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
+          console.log("Ubicación detectada:", latitude, longitude);
           if (setCurrentLocation) {
             setCurrentLocation({ lat: latitude, lng: longitude });
           }
@@ -93,7 +64,7 @@ const MapContainer = ({ children, showDirections = false, simulationActive = fal
         }
       );
     }
-  }, [setCurrentLocation, simulationActive]);
+  }, [setCurrentLocation]);
 
   const getTransportIcon = (mode) => {
     switch(mode) {

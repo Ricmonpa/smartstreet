@@ -4,7 +4,14 @@ import { initAutocomplete, searchPlaces, getPlaceDetails } from '../services/map
 
 // Componente de búsqueda con autocompletado usando Places API (New)
 const SearchBar = ({ placeholder = "A dónde vas?", onPlaceSelect }) => {
-  const { setDestination, currentLocation } = useApp()
+  const { 
+    currentLocation, 
+    setDestination, 
+    setRoutes, 
+    userProfile,
+    transportMode,
+    setTransportMode 
+  } = useApp()
   const [searchQuery, setSearchQuery] = useState('')
   const [suggestions, setSuggestions] = useState([])
   const [showSuggestions, setShowSuggestions] = useState(false)
@@ -12,6 +19,13 @@ const SearchBar = ({ placeholder = "A dónde vas?", onPlaceSelect }) => {
   const inputRef = useRef(null)
   const suggestionsRef = useRef(null)
   const timeoutRef = useRef(null)
+
+  const transportOptions = [
+    { id: 'DRIVING', icon: '🚗', label: 'Auto' },
+    { id: 'WALKING', icon: '🚶', label: 'Pie' },
+    { id: 'BICYCLING', icon: '🚲', label: 'Bici' },
+    { id: 'TRANSIT', icon: '🚌', label: 'Bus' }
+  ]
 
   // Buscar lugares cuando el usuario escribe
   useEffect(() => {
@@ -48,6 +62,11 @@ const SearchBar = ({ placeholder = "A dónde vas?", onPlaceSelect }) => {
         setDestination(placeDetails)
         setSearchQuery(placeDetails.address || placeDetails.name)
         setShowSuggestions(false)
+        
+        // Calcular rutas con el modo de transporte seleccionado
+        const calculatedRoutes = await calculateRoutes(currentLocation, placeDetails, userProfile, transportMode)
+        setRoutes(calculatedRoutes)
+        
         if (onPlaceSelect) {
           onPlaceSelect(placeDetails)
         }
@@ -98,6 +117,26 @@ const SearchBar = ({ placeholder = "A dónde vas?", onPlaceSelect }) => {
 
   return (
     <div className="flex-1 relative">
+      <div className="flex flex-col gap-2 mb-2">
+        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-1">Modo de Transporte</p>
+        <div className="flex gap-2">
+          {transportOptions.map((opt) => (
+            <button
+              key={opt.id}
+              onClick={() => setTransportMode(opt.id)}
+              className={`flex-1 flex flex-col items-center justify-center p-2 rounded-xl transition-all border ${
+                transportMode === opt.id 
+                ? 'bg-orange-500 border-orange-600 text-white shadow-md transform scale-105' 
+                : 'bg-white border-gray-100 text-gray-600 hover:bg-gray-50'
+              }`}
+            >
+              <span className="text-xl mb-1">{opt.icon}</span>
+              <span className="text-[10px] font-bold">{opt.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       <form onSubmit={handleSubmit}>
         <input
           ref={inputRef}
@@ -107,7 +146,7 @@ const SearchBar = ({ placeholder = "A dónde vas?", onPlaceSelect }) => {
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
           onFocus={() => searchQuery.length >= 3 && setShowSuggestions(true)}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="w-full px-4 py-4 rounded-xl border-none bg-white shadow-lg focus:ring-2 focus:ring-orange-500 text-gray-900"
         />
       </form>
 
