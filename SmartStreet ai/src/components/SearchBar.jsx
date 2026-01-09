@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useApp } from '../context/AppContext'
-import { initAutocomplete, searchPlaces, getPlaceDetails } from '../services/mapsService'
+import { initAutocomplete, searchPlaces, getPlaceDetails, calculateRoutes } from '../services/mapsService'
 
 // Componente de búsqueda con autocompletado usando Places API (New)
 const SearchBar = ({ placeholder = "A dónde vas?", onPlaceSelect }) => {
