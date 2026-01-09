@@ -338,12 +338,12 @@ const MapContainer = ({ children, showDirections = false }) => {
         )}
 
         {/* Renderizar ruta seleccionada */}
-        {showDirections && selectedRoute && selectedRoute.route && (
+        {selectedRoute && selectedRoute.route && (
           <DirectionsRenderer
             directions={selectedRoute.route}
             options={{
               polylineOptions: {
-                strokeColor: selectedRoute.securityLevel === 'Alta' || selectedRoute.securityLevel === 'Segura' || selectedRoute.securityLevel === 'Baja' ? '#10b981' : '#f97316', // Verde si es seguro/bajo riesgo, Naranja si es riesgo
+                strokeColor: selectedRoute.securityLevel === 'Alta' || selectedRoute.securityLevel === 'Segura' || selectedRoute.securityLevel === 'Baja' ? '#10b981' : '#f97316',
                 strokeWeight: 6,
                 strokeOpacity: 0.9
               },

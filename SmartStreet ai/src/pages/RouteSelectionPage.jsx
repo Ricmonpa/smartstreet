@@ -31,16 +31,12 @@ const RouteSelectionPage = () => {
   }, [currentLocation, destination, userProfile, setRoutes])
 
   const handleRouteSelect = (route) => {
-    setSelectedRoute(route.id)
+    setSelectedRoute(route)
   }
 
   const handleStartRoute = () => {
     if (selectedRoute) {
-      const route = routes.find(r => r.id === selectedRoute)
-      if (route) {
-        setSelectedRoute(route)
-        navigate('/navigation')
-      }
+      navigate('/navigation')
     } else {
       alert('Por favor selecciona una ruta primero')
     }
@@ -48,7 +44,7 @@ const RouteSelectionPage = () => {
 
   // Función para obtener el color del borde según el tipo de ruta
   const getBorderColor = (route) => {
-    if (selectedRoute === route.id) {
+    if (selectedRoute && selectedRoute.id === route.id) {
       return 'border-orange-500 border-2'
     }
     return 'border-gray-200'
