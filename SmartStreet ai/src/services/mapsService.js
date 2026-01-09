@@ -140,7 +140,7 @@ export const initAutocomplete = async (inputElement, onPlaceSelect, currentLocat
 }
 
 // Calcular rutas usando Directions API
-export const calculateRoutes = async (origin, destination, userProfile) => {
+export const calculateRoutes = async (origin, destination, userProfile, transportMode = 'WALKING') => {
   if (!window.google || !window.google.maps) {
     console.error('Google Maps not loaded')
     return []
@@ -148,12 +148,18 @@ export const calculateRoutes = async (origin, destination, userProfile) => {
 
   const directionsService = new window.google.maps.DirectionsService()
 
+  // Mapear transportMode a Google Maps TravelMode
+  let travelMode = window.google.maps.TravelMode.WALKING
+  if (transportMode === 'DRIVING') travelMode = window.google.maps.TravelMode.DRIVING
+  if (transportMode === 'BICYCLING') travelMode = window.google.maps.TravelMode.BICYCLING
+  if (transportMode === 'TRANSIT') travelMode = window.google.maps.TravelMode.TRANSIT
+
   return new Promise((resolve) => {
     directionsService.route(
       {
         origin: { lat: origin.lat, lng: origin.lng },
         destination: { lat: destination.lat, lng: destination.lng },
-        travelMode: window.google.maps.TravelMode.WALKING,
+        travelMode: travelMode,
         provideRouteAlternatives: true // Obtener múltiples rutas
       },
       (result, status) => {

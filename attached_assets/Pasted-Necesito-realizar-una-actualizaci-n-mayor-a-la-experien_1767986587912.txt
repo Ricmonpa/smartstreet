@@ -1,0 +1,30 @@
+Necesito realizar una actualización mayor a la experiencia de usuario y funcionalidad de la app. Vamos a pasar de un simple "visor de rutas" a un "Copiloto de Navegación Activa" (estilo Waze/Google Maps) e integrar una selección de transporte.
+
+Por favor, implementa los siguientes 4 módulos en este orden:
+
+### 1. Nuevo Módulo: Selector de Medio de Transporte
+Antes de iniciar o calcular la ruta, el usuario debe seleccionar su vehículo.
+- **UI:** Crea un componente selector (puede ser un floating bar o parte del setup inicial) con estas opciones: Automóvil, Motocicleta, Camión/Bus, Bicicleta, A pie.
+- **Lógica:** Guarda esta selección en un estado (ej. `transportMode`).
+- **Impacto:**
+  1. Al calcular la ruta en la API, usa el `travelMode` correspondiente.
+  2. Cambia el ícono del marcador de usuario según la elección (ej. un ícono de persona si camina, una moto si va en moto, un auto si maneja).
+
+### 2. "Modo Seguimiento" (Camera Tracking & Bearing)
+Actualmente el mapa es estático. Necesito navegación activa (Heads-up):
+- **Centrado Automático:** Implementa un `useEffect` que, al cambiar la `userLocation`, ejecute un `map.panTo(userLocation)` para mantener al usuario centrado.
+- **Rotación (Bearing):** Haz que el mapa rote para que "arriba" siempre sea el destino o la dirección de movimiento. Calcula el `heading` (rumbo) entre la coordenada anterior y la actual, y aplica `map.setHeading(heading)` para orientar el mapa.
+
+### 3. Marcador Suave (Interpolación de Movimiento)
+El GPS real actualiza lento (cada 3-5s) y causa saltos. Quiero suavidad:
+- **Icono Dinámico:** El `Marker` debe ser el ícono del transporte seleccionado (punto 1) y debe rotar según la dirección (`rotation={heading}`).
+- **Animación:** Implementa interpolación (usando `requestAnimationFrame`, CSS transitions o una librería ligera) para que, cuando llegue una nueva coordenada, el ícono se "deslice" hacia ella en lugar de teletransportarse de golpe.
+
+### 4. Modo Simulación (Demo para Desarrollo)
+Como no puedo salir a manejar ahora mismo para probar esto, crea un "Modo Demo":
+- Añade un botón "Simular Viaje" en la interfaz (solo visible en dev).
+- Al activarlo, el marcador debe recorrer automáticamente el array de coordenadas (`polyline`) de la ruta actual.
+- **Velocidad:** Simula una velocidad constante (ej. 50 km/h) actualizando la posición cada 100-200ms.
+- Esto debe disparar el centrado de cámara y la rotación del paso 2 para validar que la experiencia se siente fluida.
+
+**Resumen:** Quiero que la app se sienta viva. Implementa el selector de transporte y luego la lógica de simulación/seguimiento visual.

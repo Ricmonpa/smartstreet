@@ -36,28 +36,77 @@ const libraries = []
 
 // Componente principal del mapa
 const MapContainer = ({ children, showDirections = false }) => {
-  const { currentLocation, destination, selectedRoute, incidents, setCurrentLocation } = useApp()
+  const { 
+    currentLocation, 
+    destination, 
+    selectedRoute, 
+    incidents, 
+    setCurrentLocation,
+    transportMode 
+  } = useApp()
   const [map, setMap] = useState(null)
   const [mapError, setMapError] = useState(null)
   const mapRef = useRef(null)
+  const [heading, setHeading] = useState(0)
+  const prevLocationRef = useRef(null)
 
-  // Implementación de Geolocalización Dinámica
+  // Función para calcular rumbo (heading) entre dos puntos
+  const calculateHeading = (from, to) => {
+    if (!from || !to) return 0;
+    const lat1 = from.lat * Math.PI / 180;
+    const lon1 = from.lng * Math.PI / 180;
+    const lat2 = to.lat * Math.PI / 180;
+    const lon2 = to.lng * Math.PI / 180;
+    const dLon = lon2 - lon1;
+    const y = Math.sin(dLon) * Math.cos(lat2);
+    const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLon);
+    const brng = Math.atan2(y, x);
+    return ((brng * 180 / Math.PI) + 360) % 360;
+  };
+
+  // Implementación de Geolocalización Dinámica y Seguimiento
   useEffect(() => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
+      const watchId = navigator.geolocation.watchPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
-          console.log("Ubicación detectada:", latitude, longitude);
+          const newLoc = { lat: latitude, lng: longitude };
+          
+          if (prevLocationRef.current) {
+            const newHeading = calculateHeading(prevLocationRef.current, newLoc);
+            setHeading(newHeading);
+          }
+          prevLocationRef.current = newLoc;
+          
           if (setCurrentLocation) {
-            setCurrentLocation({ lat: latitude, lng: longitude });
+            setCurrentLocation(newLoc);
+          }
+
+          if (map) {
+            map.panTo(newLoc);
+            // Solo rotar si hay un movimiento significativo o estamos en modo navegación
+            if (showDirections) {
+              map.setHeading(heading);
+            }
           }
         },
         (error) => {
           console.error("Error obteniendo ubicación:", error);
-        }
+        },
+        { enableHighAccuracy: true }
       );
+      return () => navigator.geolocation.clearWatch(watchId);
     }
-  }, [setCurrentLocation]);
+  }, [setCurrentLocation, map, showDirections, heading]);
+
+  const getTransportIcon = (mode) => {
+    switch(mode) {
+      case 'DRIVING': return '🚗';
+      case 'BICYCLING': return '🚲';
+      case 'TRANSIT': return '🚌';
+      default: return '🚶';
+    }
+  };
 
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
 
@@ -298,8 +347,13 @@ const MapContainer = ({ children, showDirections = false }) => {
         {currentLocation && (
           <Marker
             position={{ lat: currentLocation.lat, lng: currentLocation.lng }}
+            label={{
+              text: getTransportIcon(transportMode),
+              fontSize: '24px'
+            }}
             icon={{
-              url: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+              path: window.google?.maps?.SymbolPath?.CIRCLE,
+              scale: 0, // Ocultar el círculo base para ver el emoji
             }}
             title="Tu ubicación"
           />

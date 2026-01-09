@@ -35,6 +35,9 @@ export const AppProvider = ({ children }) => {
   // Estado de incidencias reportadas
   const [incidents, setIncidents] = useState([])
 
+  // Estado de modo de transporte
+  const [transportMode, setTransportMode] = useState('WALKING') // 'DRIVING', 'WALKING', 'BICYCLING', 'TRANSIT'
+
   // Guardar perfil en localStorage cuando cambie
   useEffect(() => {
     localStorage.setItem('smartstreet_profile', JSON.stringify(userProfile))
@@ -76,7 +79,9 @@ export const AppProvider = ({ children }) => {
     selectedRoute,
     setSelectedRoute,
     incidents,
-    addIncident
+    addIncident,
+    transportMode,
+    setTransportMode
   }
 
   return (
