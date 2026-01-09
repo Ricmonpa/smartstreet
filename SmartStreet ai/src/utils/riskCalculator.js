@@ -90,8 +90,8 @@ function identifyMainZone(routeData, riskIntelligenceData) {
     return closestZone
   }
 
-  // Por defecto, usar Condesa si no se encuentra nada
-  return 'zona_condesa'
+  // Escalabilidad Nacional: Si está fuera de las zonas hardcodeadas, devolver null para aplicar riesgo por defecto
+  return null
 }
 
 /**
@@ -124,8 +124,18 @@ export function calculateRouteDangerPercentage(routeData, userProfile, riskIntel
   const mainZoneId = identifyMainZone(routeData, riskIntelligenceData)
   
   if (!mainZoneId) {
-    console.warn('No se pudo identificar la zona de la ruta, usando valor por defecto')
-    return 50 // Valor por defecto si no hay datos
+    // Escalabilidad Nacional: Cálculo de riesgo por defecto basado en estadísticas generales
+    console.log('Fuera de zona conocida. Aplicando riesgo base nacional por defecto.')
+    let defaultRisk = 45 // Riesgo base nacional
+    
+    // Ajustes dinámicos básicos
+    if (isNightTime()) defaultRisk += 15
+    
+    // Ajuste por perfil
+    if (userProfile.gender === 'Mujer' && isNightTime()) defaultRisk += 10
+    if (userProfile.hasValuableItems) defaultRisk += 5
+    
+    return Math.min(Math.max(defaultRisk, 0), 100)
   }
 
   const zoneData = riskIntelligenceData[mainZoneId]

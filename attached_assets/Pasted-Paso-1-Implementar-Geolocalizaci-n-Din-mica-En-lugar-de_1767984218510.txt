@@ -1,0 +1,54 @@
+Paso 1: Implementar Geolocalización Dinámica
+En lugar de tener una constante center fija, vamos a usar el estado de React. Abre el archivo y busca dónde se define la posición inicial. Cámbialo por esto:
+
+JavaScript
+
+// 1. Importa useState y useEffect si no están
+import React, { useState, useEffect } from 'react';
+
+const MapComponent = () => {
+  // 2. Estado para el centro del mapa (inicia en un punto neutro o CDMX por defecto)
+  const [currentLocation, setCurrentLocation] = useState({ lat: 19.4326, lng: -99.1332 });
+
+  useEffect(() => {
+    // 3. Función para obtener la ubicación real del usuario
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          console.log("Ubicación detectada:", latitude, longitude);
+          setCurrentLocation({ lat: latitude, lng: longitude });
+        },
+        (error) => {
+          console.error("Error obteniendo ubicación:", error);
+        }
+      );
+    }
+  }, []);
+
+  return (
+    <GoogleMap
+      center={currentLocation} // <--- Ahora es dinámico
+      zoom={14}
+      // ... resto de tus props
+    >
+      {/* Marcador de tu posición actual */}
+      <Marker position={currentLocation} label="Tú estás aquí" />
+    </GoogleMap>
+  );
+};
+Paso 2: Ajustar el Motor de Riesgo (src/utils/riskCalculator.js)
+Como quieres que funcione en todo el país, el motor de cálculo debe dejar de buscar solo en el array de "6 zonas de CDMX".
+
+Abre src/utils/riskCalculator.js.
+
+Busca la función que compara tu lat/lng con las zonas.
+
+El Ajuste: Si el usuario está fuera de las zonas "hardcodeadas" (como ahora en Puebla), el motor debe aplicar un Cálculo de Riesgo por Defecto basado en estadísticas generales de la ciudad/municipio hasta que conectemos la base de datos nacional.
+
+Paso 3: Configuración del Backend para Escalabilidad Nacional
+Para que SmartStreet ai realmente "conozca" todo México, necesitamos que el frontend le pregunte a un servidor.
+
+He detectado que ya tienes una estructura base para conectarte a APIs (como se ve en tus archivos de Chat.jsx que usan API_BASE_URL ).
+
+Usaremos esa misma lógica para crear un endpoint: POST /api/risk-at-location.

@@ -36,10 +36,28 @@ const libraries = []
 
 // Componente principal del mapa
 const MapContainer = ({ children, showDirections = false }) => {
-  const { currentLocation, destination, selectedRoute, incidents } = useApp()
+  const { currentLocation, destination, selectedRoute, incidents, setCurrentLocation } = useApp()
   const [map, setMap] = useState(null)
   const [mapError, setMapError] = useState(null)
   const mapRef = useRef(null)
+
+  // Implementación de Geolocalización Dinámica
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          console.log("Ubicación detectada:", latitude, longitude);
+          if (setCurrentLocation) {
+            setCurrentLocation({ lat: latitude, lng: longitude });
+          }
+        },
+        (error) => {
+          console.error("Error obteniendo ubicación:", error);
+        }
+      );
+    }
+  }, [setCurrentLocation]);
 
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
 
